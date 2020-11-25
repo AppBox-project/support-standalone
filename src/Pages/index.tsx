@@ -1,4 +1,8 @@
 import Layout from "./Layout";
-import Login from "./Login";
+import Tickets from "./Tickets";
+import Home from "./Home";
 
-export default { Layout, Login };
+export const layout = Layout;
+export const home = Home;
+
+export default { tickets: Tickets };

@@ -19,7 +19,7 @@ const Layout: React.FC<{ api: API }> = ({ api }) => {
   // Lifecycle
   useEffect(() => {
     api
-      .getObjects("support-tickets", "")
+      .getObjects("support-tickets", `person=${api.person._id}`)
       .then((tickets: TicketType[]) => setTickets(tickets));
   }, [api]);
 

@@ -1,6 +1,6 @@
 export interface UserType {
   _id: string;
-  data: { full_name: string };
+  data: { full_name: string; picture: string };
   objectId: string;
 }
 
@@ -21,5 +21,6 @@ export interface PersonType {
     first_name: string;
     last_name: string;
     full_name: string;
+    picture: { url: string };
   };
 }

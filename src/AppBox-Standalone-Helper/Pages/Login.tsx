@@ -66,9 +66,7 @@ const Login: React.FC<{ config: ConfigType; api: API }> = ({ config, api }) => {
             style={{ marginTop: 15 }}
             onClick={() => {
               api.signIn(user).then(
-                (success) => {
-                  console.log(success);
-                },
+                (success) => window.location.reload(),
                 (error) => setSignInError(error)
               );
             }}

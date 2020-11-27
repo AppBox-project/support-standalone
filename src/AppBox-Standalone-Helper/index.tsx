@@ -3,7 +3,8 @@ export { getAppConfig };
 // Functions
 const getAppConfig = (respond: (config) => void) => {
   const url = process.env.REACT_APP_URL;
-  const appCode = process.env.REACT_APP_STANDALONE_SECRET;
+  const appCode = process.env.REACT_APP_SECRET;
+
   const config = localStorage.getItem("config");
 
   if (config) {

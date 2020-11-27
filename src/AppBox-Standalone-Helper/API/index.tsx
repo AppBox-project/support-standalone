@@ -3,7 +3,7 @@ import { PersonType, UserType, ConfigType } from "../Types";
 export default class API {
   key: string;
   url = process.env.REACT_APP_URL;
-  appCode = process.env.REACT_APP_STANDALONE_SECRET;
+  appCode = process.env.REACT_APP_SECRET;
   token;
   auth;
   user: UserType;

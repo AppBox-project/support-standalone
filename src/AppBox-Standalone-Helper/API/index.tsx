@@ -4,6 +4,7 @@ export default class API {
   key: string;
   url = process.env.REACT_APP_URL;
   appCode = process.env.REACT_APP_SECRET;
+  appName = process.env.REACT_APP_NAME;
   token;
   auth;
   user: UserType;
@@ -15,6 +16,7 @@ export default class API {
     new Promise((resolve, reject) => {
       post(`${this.url}/api/system/signIn`, {
         user,
+        appName: this.appName,
         standAloneCode: this.appCode,
       }).then((res: any) => {
         console.log("API feedback", res);

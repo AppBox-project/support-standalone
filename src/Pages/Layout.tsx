@@ -12,8 +12,8 @@ const Layout: React.FC<{ api: API; children }> = ({ api, children }) => {
       alignItems="center"
       className={styles.root}
       style={{
-        backgroundImage: `url(${api.config.login.background}`,
-        backgroundColor: `rgba(${api.config.color.r},${api.config.color.g},${api.config.color.b},0.6)`,
+        backgroundImage: `url(${api?.config?.login?.background}`,
+        backgroundColor: `rgba(${api?.config?.color?.r},${api?.config?.color?.g},${api?.config?.color?.b},0.6)`,
       }}
     >
       <Grid item xs={12} md={8}>

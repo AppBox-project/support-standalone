@@ -4,13 +4,13 @@ export { getAppConfig };
 const getAppConfig = (respond: (config) => void) => {
   const url = process.env.REACT_APP_URL;
   const appCode = process.env.REACT_APP_SECRET;
-
+  const appName = process.env.REACT_APP_NAME;
   const config = localStorage.getItem("config");
 
   if (config) {
     // Cached load. First respond with the cached data, then perform a background refresh if needed.
     respond(JSON.parse(config));
-    fetch(`${url}/api/system/standalone/${appCode}`)
+    fetch(`${url}/api/system/standalone/${appName}-${appCode}`)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -27,7 +27,7 @@ const getAppConfig = (respond: (config) => void) => {
       );
   } else {
     // First load: first fetch, then resolve.
-    fetch(`${url}/api/system/standalone/${appCode}`)
+    fetch(`${url}/api/system/standalone/${appName}-${appCode}`)
       .then((res) => res.json())
       .then(
         (result) => {

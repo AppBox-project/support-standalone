@@ -48,7 +48,6 @@ const App: React.FC<{
       }
     }
   }, [user, person]);
-
   return (
     <ThemeProvider
       theme={createMuiTheme({
